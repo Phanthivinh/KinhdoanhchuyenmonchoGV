@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Product Mockups - EduE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #023e8a;
+            --primary-light: #0077b6;
+            --accent: #e07b39;
+            --accent-light: #f4a261;
+            --text-color: #03045e;
+            --bg-white: #ffffff;
+            --bg-light: #f0f4f8;
+            --shadow: 0 20px 60px rgba(2, 62, 138, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e8f4f8 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            padding: 60px 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 60px;
+            font-size: 32px;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin: 80px 0 40px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        /* ===== LAPTOP MOCKUP ===== */
+        .laptop-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .laptop {
+            position: relative;
+            width: 800px;
+        }
+
+        .laptop-screen {
+            background: #1a1a2e;
+            border-radius: 12px 12px 0 0;
+            padding: 20px 20px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .laptop-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .laptop-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .laptop-dot.red {
+            background: #ff5f57;
+        }
+
+        .laptop-dot.yellow {
+            background: #febc2e;
+        }
+
+        .laptop-dot.green {
+            background: #28c840;
+        }
+
+        .laptop-content {
+            background: var(--bg-white);
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+        }
+
+        .course-ui {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 400px;
+        }
+
+        .course-sidebar {
+            background: var(--primary);
+            padding: 24px;
+            color: white;
+        }
+
+        .course-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .course-logo span {
+            color: var(--accent);
+        }
+
+        .course-nav {
+            list-style: none;
+        }
+
+        .course-nav li {
+            padding: 14px 16px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .course-nav li:hover,
+        .course-nav li.active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .course-nav li.active {
+            background: var(--accent);
+        }
+
+        .course-main {
+            padding: 24px;
+        }
+
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .course-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .course-progress {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .progress-bar {
+            width: 120px;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 65%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 4px;
+        }
+
+        .video-player {
+            background: #1a1a2e;
+            border-radius: 12px;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .video-timeline {
+            flex: 1;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+        }
+
+        .video-time {
+            color: white;
+            font-size: 12px;
+        }
+
+        .lesson-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .lesson-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        .lesson-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .lesson-check.pending {
+            background: #e2e8f0;
+            color: #94a3b8;
+        }
+
+        .lesson-info {
+            flex: 1;
+        }
+
+        .lesson-name {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .lesson-duration {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .laptop-base {
+            background: #c4c4c4;
+            height: 20px;
+            border-radius: 0 0 4px 4px;
+            margin: 0 60px;
+        }
+
+        .laptop-stand {
+            background: linear-gradient(180deg, #d4d4d4 0%, #a0a0a0 100%);
+            height: 12px;
+            width: 200px;
+            margin: 0 auto;
+            border-radius: 0 0 8px 8px;
+        }
+
+        /* ===== EBOOK MOCKUP ===== */
+        .ebook-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .ebook-3d {
+            position: relative;
+            width: 280px;
+            perspective: 1000px;
+        }
+
+        .ebook-cover {
+            width: 280px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 4px 16px 16px 4px;
+            box-shadow:
+                12px 12px 30px rgba(2, 62, 138, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            transform: rotateY(-15deg);
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ebook-cover::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+        }
+
+        .ebook-badge {
+            display: inline-block;
+            background: var(--accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            width: fit-content;
+        }
+
+        .ebook-title {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+
+        .ebook-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            flex: 1;
+        }
+
+        .ebook-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .author-pic {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .author-details {
+            font-size: 12px;
+        }
+
+        .author-details strong {
+            display: block;
+            font-size: 14px;
+        }
+
+        /* Tablet Ebook */
+        .tablet-ebook {
+            width: 320px;
+        }
+
+        .tablet-frame {
+            background: #1a1a2e;
+            border-radius: 24px;
+            padding: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .tablet-screen {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 24px;
+            min-height: 420px;
+        }
+
+        .ebook-reader-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .ebook-reader-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .ebook-page-num {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .ebook-content {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #475569;
+        }
+
+        .ebook-content h3 {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .ebook-content p {
+            margin-bottom: 16px;
+        }
+
+        .highlight-box {
+            background: rgba(224, 123, 57, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        /* ===== MATERIALS MOCKUP ===== */
+        .materials-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .material-card {
+            background: var(--bg-white);
+            border-radius: 16px;
+            padding: 24px;
+            width: 260px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .material-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .material-preview {
+            background: var(--bg-light);
+            border-radius: 12px;
+            height: 160px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .material-type {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .material-type.orange {
+            background: var(--accent);
+        }
+
+        .material-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .material-desc {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+
+        .material-download {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .material-download:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>💻 Digital Product Mockups - EduE</h1>
+
+    <!-- LAPTOP MOCKUP - COURSE PLATFORM -->
+    <h2>🎓 Giao Diện Khóa Học Online</h2>
+    <div class="laptop-container">
+        <div class="laptop">
+            <div class="laptop-screen">
+                <div class="laptop-header">
+                    <div class="laptop-dot red"></div>
+                    <div class="laptop-dot yellow"></div>
+                    <div class="laptop-dot green"></div>
+                </div>
+                <div class="laptop-content">
+                    <div class="course-ui">
+                        <div class="course-sidebar">
+                            <div class="course-logo">
+                                Edu<span>E</span>
+                            </div>
+                            <ul class="course-nav">
+                                <li>📊 Dashboard</li>
+                                <li class="active">📚 Khóa học của tôi</li>
+                                <li>📝 Bài tập</li>
+                                <li>📜 Chứng chỉ</li>
+                                <li>💬 Hỗ trợ</li>
+                                <li>⚙️ Cài đặt</li>
+                            </ul>
+                        </div>
+                        <div class="course-main">
+                            <div class="course-header">
+                                <div class="course-title">14 Ngày Khởi Động KDCM</div>
+                                <div class="course-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                    <span>65% hoàn thành</span>
+                                </div>
+                            </div>
+                            <div class="video-player">
+                                <div class="play-button">▶</div>
+                                <div class="video-controls">
+                                    <span class="video-time">12:34</span>
+                                    <div class="video-timeline"></div>
+                                    <span class="video-time">25:00</span>
+                                </div>
+                            </div>
+                            <div class="lesson-list">
+                                <div class="lesson-item">
+                                    <div class="lesson-check">✓</div>
+                                    <div class="lesson-info">
+                                        <div class="lesson-name">Bài 1: Giới thiệu khóa học</div>
+                                        <div class="lesson-duration">15:00</div>
+                                    </div>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-check">✓</div>
+                                    <div class="lesson-info">
+                                        <div class="lesson-name">Bài 2: Xác định mục tiêu</div>
+                                        <div class="lesson-duration">20:00</div>
+                                    </div>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-check pending">3</div>
+                                    <div class="lesson-info">
+                                        <div class="lesson-name">Bài 3: Xây dựng nội dung</div>
+                                        <div class="lesson-duration">25:00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="laptop-base"></div>
+            <div class="laptop-stand"></div>
+        </div>
+    </div>
+
+    <!-- EBOOK MOCKUPS -->
+    <h2>📚 Ebook & Tài Liệu Số</h2>
+    <div class="ebook-container">
+        <div class="ebook-3d">
+            <div class="ebook-cover">
+                <span class="ebook-badge">EBOOK MIỄN PHÍ</span>
+                <h3 class="ebook-title">Kinh Doanh Chuyên Môn Cho Giáo Viên</h3>
+                <p class="ebook-subtitle">Hướng dẫn từng bước xây dựng sự nghiệp KDCM online cho giáo viên THCS, THPT
+                </p>
+                <div class="ebook-author">
+                    <div class="author-pic">E</div>
+                    <div class="author-details">
+                        <strong>EduE Academy</strong>
+                        Mentor & Trainer
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tablet-ebook">
+            <div class="tablet-frame">
+                <div class="tablet-screen">
+                    <div class="ebook-reader-header">
+                        <span class="ebook-reader-title">📖 Đang đọc</span>
+                        <span class="ebook-page-num">Trang 12/45</span>
+                    </div>
+                    <div class="ebook-content">
+                        <h3>Chương 2: Xác Định Thế Mạnh</h3>
+                        <p>Để bắt đầu hành trình KDCM, điều quan trọng nhất là bạn cần xác định rõ thế mạnh chuyên môn
+                            của mình.</p>
+                        <div class="highlight-box">
+                            💡 <strong>Mẹo:</strong> Hãy liệt kê 3 kỹ năng bạn giỏi nhất và 3 chủ đề học sinh hỏi nhiều
+                            nhất.
+                        </div>
+                        <p>Khi đã xác định được thế mạnh, bạn sẽ dễ dàng định vị bản thân và tạo sự khác biệt...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MATERIALS MOCKUPS -->
+    <h2>📋 Tài Liệu Học Tập</h2>
+    <div class="materials-container">
+        <div class="material-card">
+            <div class="material-preview">📄</div>
+            <span class="material-type">WORKSHEET</span>
+            <h4 class="material-name">Bài Tập Thực Hành Tuần 1</h4>
+            <p class="material-desc">Worksheet giúp bạn áp dụng kiến thức vào thực tế ngay lập tức.</p>
+            <a href="#" class="material-download">
+                ⬇️ Tải xuống PDF
+            </a>
+        </div>
+
+        <div class="material-card">
+            <div class="material-preview">🎴</div>
+            <span class="material-type orange">FLASHCARD</span>
+            <h4 class="material-name">Bộ Flashcard 50 Thuật Ngữ</h4>
+            <p class="material-desc">Học nhanh các thuật ngữ quan trọng trong KDCM với flashcard.</p>
+            <a href="#" class="material-download">
+                ⬇️ Tải xuống PDF
+            </a>
+        </div>
+
+        <div class="material-card">
+            <div class="material-preview">📊</div>
+            <span class="material-type">TEMPLATE</span>
+            <h4 class="material-name">Template Kế Hoạch 14 Ngày</h4>
+            <p class="material-desc">Mẫu kế hoạch để theo dõi tiến độ học tập hàng ngày.</p>
+            <a href="#" class="material-download">
+                ⬇️ Tải xuống Excel
+            </a>
+        </div>
+
+        <div class="material-card">
+            <div class="material-preview">🎯</div>
+            <span class="material-type orange">CHECKLIST</span>
+            <h4 class="material-name">Checklist Hoàn Thành Khóa</h4>
+            <p class="material-desc">Danh sách kiểm tra để đảm bảo bạn không bỏ lỡ bước nào.</p>
+            <a href="#" class="material-download">
+                ⬇️ Tải xuống PDF
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

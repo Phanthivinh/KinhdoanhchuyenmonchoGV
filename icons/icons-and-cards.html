@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Icons & Service Cards - EduE Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #023e8a;
+            --primary-light: #0077b6;
+            --accent: #e07b39;
+            --accent-light: #f4a261;
+            --text-color: #03045e;
+            --bg-white: #ffffff;
+            --bg-light: #f8fafc;
+            --shadow: 0 4px 20px rgba(2, 62, 138, 0.1);
+            --shadow-hover: 0 8px 30px rgba(2, 62, 138, 0.2);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .color-palette {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .color-swatch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .color-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .color-label {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin: 60px 0 30px;
+            font-weight: 600;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        /* ===== ICONS SECTION ===== */
+        .icons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .icon-wrapper.accent {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+        }
+
+        .icon-wrapper:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .icon-wrapper svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .icon-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        /* ===== SERVICE CARDS SECTION ===== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(2, 62, 138, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .card-icon.accent {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+        }
+
+        .card-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 12px;
+        }
+
+        .card-description {
+            font-size: 15px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+
+        .card-link:hover {
+            gap: 12px;
+        }
+
+        .card-link svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* ===== BENEFITS CARDS ===== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .benefit-card {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 28px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:nth-child(2) {
+            border-top-color: var(--accent);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .benefit-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, rgba(2, 62, 138, 0.1) 0%, rgba(0, 119, 182, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .benefit-card:nth-child(2) .benefit-icon {
+            background: linear-gradient(135deg, rgba(224, 123, 57, 0.1) 0%, rgba(244, 162, 97, 0.1) 100%);
+        }
+
+        .benefit-card:nth-child(2) .benefit-icon svg {
+            stroke: var(--accent);
+        }
+
+        .benefit-icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--primary);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .benefit-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .benefit-text {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* ===== PROCESS STEPS ===== */
+        .process-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            flex: 1;
+            min-width: 200px;
+            max-width: 240px;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .process-step:nth-child(3) .step-number,
+        .process-step:nth-child(7) .step-number {
+            background: var(--accent);
+        }
+
+        .step-content {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 24px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            width: 100%;
+        }
+
+        .step-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .step-desc {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .step-arrow {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 900px) {
+            .step-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        /* ===== PRICING CARDS ===== */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 32px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .pricing-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .pricing-price {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .pricing-price span {
+            font-size: 16px;
+            font-weight: 400;
+            color: #64748b;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 24px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .pricing-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 14px 24px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured .pricing-btn {
+            background: var(--accent);
+        }
+
+        .pricing-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(2, 62, 138, 0.3);
+        }
+
+        /* ===== TESTIMONIAL CARDS ===== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-quote {
+            font-size: 15px;
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 15px;
+        }
+
+        .author-role {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .testimonial-rating {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            margin: 60px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .cta-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta-text {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎓 Bộ Components - Website Giáo Dục EduE</h1>
+
+    <div class="color-palette">
+        <div class="color-swatch">
+            <div class="color-box" style="background: #023e8a;"></div>
+            <span class="color-label">#023e8a</span>
+        </div>
+        <div class="color-swatch">
+            <div class="color-box" style="background: #03045e;"></div>
+            <span class="color-label">#03045e</span>
+        </div>
+        <div class="color-swatch">
+            <div class="color-box" style="background: #e07b39;"></div>
+            <span class="color-label">#e07b39</span>
+        </div>
+        <div class="color-swatch">
+            <div class="color-box" style="background: #f4a261;"></div>
+            <span class="color-label">#f4a261</span>
+        </div>
+        <div class="color-swatch">
+            <div class="color-box" style="background: #ffffff; border: 1px solid #e2e8f0;"></div>
+            <span class="color-label">#ffffff</span>
+        </div>
+    </div>
+
+    <!-- ICONS -->
+    <h2>📦 Bộ Icons Giáo Dục</h2>
+    <div class="icons-grid">
+        <div class="icon-item">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                    <path
+                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    <path
+                        d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998a12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                </svg>
+            </div>
+            <span class="icon-label">Học tập</span>
+        </div>
+        <div class="icon-item">
+            <div class="icon-wrapper accent">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+            </div>
+            <span class="icon-label">Sách & Tài liệu</span>
+        </div>
+        <div class="icon-item">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+            </div>
+            <span class="icon-label">Ý tưởng</span>
+        </div>
+        <div class="icon-item">
+            <div class="icon-wrapper accent">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+            </div>
+            <span class="icon-label">Chứng nhận</span>
+        </div>
+        <div class="icon-item">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+            </div>
+            <span class="icon-label">Video</span>
+        </div>
+        <div class="icon-item">
+            <div class="icon-wrapper accent">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+            </div>
+            <span class="icon-label">Cộng đồng</span>
+        </div>
+        <div class="icon-item">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+            </div>
+            <span class="icon-label">Nhanh chóng</span>
+        </div>
+        <div class="icon-item">
+            <div class="icon-wrapper accent">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+            </div>
+            <span class="icon-label">Tiến bộ</span>
+        </div>
+    </div>
+
+    <!-- SERVICE CARDS -->
+    <h2>🎯 Service Cards</h2>
+    <div class="cards-grid">
+        <div class="service-card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                    <path
+                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                </svg>
+            </div>
+            <h3 class="card-title">Khóa Học Online</h3>
+            <p class="card-description">Học mọi lúc, mọi nơi với video bài giảng chất lượng cao. Video + Zoom + Đồng
+                hành Zalo.</p>
+            <a href="#" class="card-link">
+                Khám phá ngay
+                <svg viewBox="0 0 24 24">
+                    <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+        <div class="service-card">
+            <div class="card-icon accent">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+            </div>
+            <h3 class="card-title">Ebook & Tài Liệu</h3>
+            <p class="card-description">Bộ sưu tập ebook và tài liệu học tập được biên soạn kỹ lưỡng, dễ hiểu, dễ áp
+                dụng.</p>
+            <a href="#" class="card-link">
+                Tải về ngay
+                <svg viewBox="0 0 24 24">
+                    <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+        <div class="service-card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            </div>
+            <h3 class="card-title">Mentoring 1:1</h3>
+            <p class="card-description">Được hướng dẫn trực tiếp bởi giáo viên giàu kinh nghiệm, giải đáp mọi thắc mắc
+                của bạn.</p>
+            <a href="#" class="card-link">
+                Đặt lịch hẹn
+                <svg viewBox="0 0 24 24">
+                    <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- BENEFITS -->
+    <h2>✨ Lợi Ích Khi Học</h2>
+    <div class="benefits-grid">
+        <div class="benefit-card">
+            <div class="benefit-icon">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+            </div>
+            <h4 class="benefit-title">Phát Triển Tư Duy</h4>
+            <p class="benefit-text">Rèn luyện khả năng tư duy phản biện và giải quyết vấn đề hiệu quả.</p>
+        </div>
+        <div class="benefit-card">
+            <div class="benefit-icon">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+            </div>
+            <h4 class="benefit-title">Xây Dựng Sự Tự Tin</h4>
+            <p class="benefit-text">Xây dựng sự nghiệp KDCM online với nền tảng vững chắc.</p>
+        </div>
+        <div class="benefit-card">
+            <div class="benefit-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+            </div>
+            <h4 class="benefit-title">Học Tập Bền Vững</h4>
+            <p class="benefit-text">Phương pháp học hiệu quả, ghi nhớ lâu dài và áp dụng được vào thực tế.</p>
+        </div>
+    </div>
+
+    <!-- LEARNING PROCESS -->
+    <h2>📈 Quy Trình Học Tập</h2>
+    <div class="process-container">
+        <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h5 class="step-title">Đăng Ký</h5>
+                <p class="step-desc">Điền form đăng ký và chọn khóa học phù hợp</p>
+            </div>
+        </div>
+        <span class="step-arrow">→</span>
+        <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h5 class="step-title">Học Video</h5>
+                <p class="step-desc">Xem video bài giảng theo lộ trình</p>
+            </div>
+        </div>
+        <span class="step-arrow">→</span>
+        <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h5 class="step-title">Zoom Live</h5>
+                <p class="step-desc">Tham gia Zoom trực tiếp với giáo viên</p>
+            </div>
+        </div>
+        <span class="step-arrow">→</span>
+        <div class="process-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h5 class="step-title">Đồng Hành Zalo</h5>
+                <p class="step-desc">Hỗ trợ 24/7 qua nhóm Zalo</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRICING -->
+    <h2>💰 Bảng Giá Khóa Học</h2>
+    <div class="pricing-grid">
+        <div class="pricing-card">
+            <div class="pricing-name">Gói Cơ Bản</div>
+            <div class="pricing-price">990K <span>/khóa</span></div>
+            <ul class="pricing-features">
+                <li>Truy cập video bài giảng</li>
+                <li>Tài liệu PDF đầy đủ</li>
+                <li>Nhóm Zalo hỗ trợ</li>
+                <li>Chứng nhận hoàn thành</li>
+            </ul>
+            <a href="#" class="pricing-btn">Đăng Ký Ngay</a>
+        </div>
+        <div class="pricing-card featured">
+            <span class="pricing-badge">Phổ biến nhất</span>
+            <div class="pricing-name">Gói VIP</div>
+            <div class="pricing-price">1.990K <span>/khóa</span></div>
+            <ul class="pricing-features">
+                <li>Tất cả trong Gói Cơ Bản</li>
+                <li>2 buổi Zoom 1:1 với GV</li>
+                <li>Workshop bonus trị giá 349K</li>
+                <li>Hỗ trợ ưu tiên 24/7</li>
+                <li>Cập nhật nội dung trọn đời</li>
+            </ul>
+            <a href="#" class="pricing-btn">Đăng Ký Ngay</a>
+        </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <h2>💬 Học Viên Nói Gì</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <p class="testimonial-quote">"Khóa học rất chất lượng! Tôi đã áp dụng được ngay vào công việc giảng dạy và
+                thấy hiệu quả rõ rệt."</p>
+            <div class="testimonial-author">
+                <div class="author-avatar">H</div>
+                <div class="author-info">
+                    <div class="author-name">Hương Nguyễn</div>
+                    <div class="author-role">Giáo viên THCS</div>
+                </div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <p class="testimonial-quote">"Cô giáo rất nhiệt tình và chuyên nghiệp. Nội dung khóa học được chuẩn bị kỹ
+                lưỡng, dễ hiểu."</p>
+            <div class="testimonial-author">
+                <div class="author-avatar">M</div>
+                <div class="author-info">
+                    <div class="author-name">Minh Trần</div>
+                    <div class="author-role">Giáo viên THPT</div>
+                </div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+        <h3 class="cta-title">Sẵn sàng bắt đầu hành trình?</h3>
+        <p class="cta-text">Đăng ký ngay hôm nay để nhận ưu đãi workshop trị giá 349K khi đăng ký trước 24h.</p>
+        <a href="#" class="cta-btn">Điền Form Đăng Ký</a>
+    </div>
+
+</body>
+
+</html>
