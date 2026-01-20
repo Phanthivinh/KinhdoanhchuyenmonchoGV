@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduE - Website Giáo Dục</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #023e8a;
+            --primary-light: #0077b6;
+            --accent: #e07b39;
+            --text-color: #03045e;
+            --bg-white: #ffffff;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation */
+        .nav-section {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-section h2 {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .nav-card {
+            background: var(--bg-white);
+            border-radius: 16px;
+            padding: 32px;
+            text-decoration: none;
+            color: var(--text-color);
+            box-shadow: 0 4px 20px rgba(2, 62, 138, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(2, 62, 138, 0.08);
+        }
+
+        .nav-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(2, 62, 138, 0.15);
+        }
+
+        .nav-card-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .nav-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .nav-card p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Edu<span>E</span> Academy</h1>
+        <p>Hệ thống visual hoàn chỉnh cho website giáo dục. Khám phá các components, mockups và tài liệu thiết kế.</p>
+        <a href="icons/icons-and-cards.html" class="hero-btn">Xem Components →</a>
+    </section>
+
+    <!-- Navigation Section -->
+    <section class="nav-section">
+        <h2>📁 Danh Mục Tài Nguyên</h2>
+        <div class="nav-grid">
+            <a href="icons/icons-and-cards.html" class="nav-card">
+                <div class="nav-card-icon">🎨</div>
+                <h3>Icons & Components</h3>
+                <p>Bộ icons, service cards, benefit cards, pricing, testimonials và CTA section với brand màu xanh +
+                    cam.</p>
+            </a>
+            <a href="mockups/mockups.html" class="nav-card">
+                <div class="nav-card-icon">💻</div>
+                <h3>Digital Mockups</h3>
+                <p>Mockup giao diện khóa học online, ebook 3D, tablet reader và các tài liệu học tập.</p>
+            </a>
+            <a href="hero/hero-banner.jpg" class="nav-card">
+                <div class="nav-card-icon">🖼️</div>
+                <h3>Hero Banner</h3>
+                <p>Ảnh hero banner chính cho trang chủ với thiết kế 3D hiện đại.</p>
+            </a>
+            <a href="hero/logo.jpg" class="nav-card">
+                <div class="nav-card-icon">🌻</div>
+                <h3>Logo</h3>
+                <p>Logo hoa hướng dương với phong cách độc đáo, kết hợp xanh và cam.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 EduE Academy - Thiết kế bởi AI Assistant</p>
+    </footer>
+
+</body>
+
+</html>
